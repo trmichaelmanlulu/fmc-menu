@@ -74,8 +74,9 @@
     height: 100%;
 }
 .header-search {
-    background: #fdfdfd;
-    border: 1px solid #d2d2d2;
+    color: #4d5c6f;
+    background: #fafcff;
+    border: 1px solid #d0d0d0;
     box-shadow: none;
     font-size: 15px;
     font-weight: 700;
@@ -165,13 +166,17 @@
 .header-top-menus li > a:link,
 .header-top-menus li > a:visited,
 .header-top-menus li > a:active {
-    font-size: 15px;
+    font-size: 14px;
     font-family: 'abrahamregular', Arial, sans-serif;
     color: #222;
-    padding: 0 12px;
+    padding: 0 8px;
     text-transform: uppercase;
     transition: color 0.2s ease-in-out;
     background: transparent;
+}
+.ht-phone-number {
+    font-size: 16px !important;
+    line-height: 18px !important;
 }
 .header-top-menus li > a:hover {
     color: #4D4D4D;
@@ -274,7 +279,6 @@
 }
 .ht-content-header {
     padding-bottom: 10px;
-    border-bottom: 1px solid #d4d4d4;
     margin-bottom: 20px;
 }
 .atc-item-features p {
@@ -424,7 +428,7 @@
     position: relative;
     display: block;
     width: 100%;
-    height: 210px;
+    height: 230px;
     margin: 15px auto;
     text-align: center;
     background-color: #FFF;
@@ -437,29 +441,46 @@
 .cube-container p {
     transition: color 0.15s ease-in-out;
 }
-.cube-container:hover p {
+.cube-container:hover p,
+.sidebar-help-items:hover h6 {
     color: #327cd6;
+}
+.cube-container:hover p.clr-dark,
+.sidebar-help-items:hover p {
+    color: #555;
 }
 .cube-container path,
 .cube-container circle,
-.cube-container path
-.cube-container rect {
+.cube-container path,
+.cube-container rect,
+.sidebar-help-items path,
+.sidebar-help-items circle,
+.sidebar-help-items path,
+.sidebar-help-items rect {
     transition: all 0.15s ease-in-out;
 }
 .cube-container:hover .icon-phone,
 .cube-container:hover .icon-phone2,
 .cube-container:hover .icon-live-chat,
 .cube-container:hover .icon-email2,
-.cube-container:hover .icon-trunk2 {
-    stroke: #327cd6;
+.cube-container:hover .icon-trunk2,
+.sidebar-help-items:hover .icon-phone,
+.sidebar-help-items:hover .icon-phone2,
+.sidebar-help-items:hover .icon-live-chat,
+.sidebar-help-items:hover .icon-email2,
+.sidebar-help-items:hover .icon-truck2 {
+    stroke: #327cd6 !important;
 }
 .cube-container:hover .icon-email2,
 .cube-container:hover .icon-faq2,
 .cube-container:hover .icon-truck2,
 .cube-container:hover .htc-account-details path,
 .cube-container:hover .htc-account-update-vehicle path:not(.icon-update-vehicle),
-.cube-container:hover .htc-account-interest path {
-    fill: #327cd6;
+.cube-container:hover .htc-account-interest path,
+.sidebar-help-items:hover .icon-faq2,
+.sidebar-help-items:hover .icon-truck2,
+.sidebar-help-items:hover .icon-email2 {
+    fill: #327cd6 !important;
 }
 .cube-img-wrapper {
     position: relative;
@@ -467,9 +488,11 @@
     width: 100%;
     float: left;
     height: 140px;
+    margin-top: 10px;
 }
 .htc-help-sidebar,
-.htc-account-sidebar {
+.htc-account-sidebar,
+.htc-more-essentials {
     width: 230px;
     float: right;
     padding-left: 15px;
@@ -499,6 +522,7 @@
 
 .htc-more-items {
     width: 100%;
+    height: 230px;
     margin-bottom: 15px;
     text-align: center;
     background-color: #FFF;
@@ -666,9 +690,16 @@
     .header-top-menus li > a:visited, 
     .header-top-menus li > a:active {
         font-size: 14px;
-        padding: 0 10px;
+        padding: 0 8px;
     }
 }
+
+@media screen and (min-width: 1300) {
+    .top-menu-small {
+        display: none;
+    }
+}
+
 @media screen and (min-width: 992px) and (max-width: 1300px) {
     .header-top-items:first-child {
         width: 200px;
@@ -682,7 +713,7 @@
         padding: 20px 20px 5px 20px;
     }
     .htc-more-items {
-        min-height: 250px;
+        min-height: 240px;
     }
     .htc-community-sidebar {
         width: 230px;
@@ -694,6 +725,18 @@
         float: right;
         padding-left: 15px;
         margin-left: 10px;
+    }
+    .htc-account-container,
+    .htc-help-items-container,
+    .htc-more-featured {
+        width: 73%;
+    }
+    .cube-container:link, .cube-container:visited, .cube-container:active {
+        height: 210px;
+    }
+    .cube-img-wrapper {
+        height: 130px;
+        margin: 0;
     }
 }
 
@@ -844,7 +887,7 @@
         padding: 10px;
     }
     .sidebar-actions.active {
-        background: #ebebeb;
+        background: #f9f9f9;
     }
     .sidebar-actions .fa {
         color: #fff;
@@ -861,7 +904,9 @@
         right: 3px;
     }
     .sidebar-body {
+        background: #f9f9f9;
         overflow-y: scroll;
+        overflow-x: hidden;
         max-height: 100vh;
     }
     .sidebar-list {
@@ -870,7 +915,7 @@
         height: 100%;
     }
     .sidebar-items {
-        background: #ebebeb;
+        background: #F9F9F9;
         border-bottom: 1px solid #b5b5b5;
         transition: background-color 0.15s ease-in-out;
     }
@@ -901,6 +946,31 @@
         padding: 40px;
         right: -400px;
         transition: all 0.15s ease-in-out;
+    }
+    .sidebar-contents.sidebar-account {
+        padding: 0;
+    }
+    .sidebar-login,
+    .sidebar-account-details,
+    .sidebar-forgot-pass,
+    .sidebar-create-account {
+        padding: 40px !important;
+        height: 140vh;
+        transition: all 0.15s ease-in-out;
+    }
+    .sidebar-forgot-pass,
+    .sidebar-create-account {
+        position: absolute;
+        background: #f9f9f9;
+        right: -100vw;
+        z-index: 2;
+    }
+    .sidebar-forgot-pass.slideIn,
+    .sidebar-create-account.slideIn {
+        right: 0;
+    }
+    .sidebar-search {
+        z-index: 1;
     }
     .header-sidebar.slideIn,
     .sidebar-contents.slideIn {
@@ -1063,11 +1133,13 @@
     /* Get Help */
     .sidebar-help-items {
         cursor: pointer;
-        box-shadow: 0 6px 6px -6px #777;
-        border: 1px solid #f3f3f3;
+        border-bottom: 1px solid #eaeaea;
         width: 48%;
         min-height: 140px;
         margin-bottom: 20px;
+    }
+    .sidebar-help-items h6 {
+        transition: color 0.15s ease-in-out;
     }
     .sidebar-help-items:nth-child(1),
     .sidebar-help-items:nth-child(2) {
@@ -1120,11 +1192,11 @@
     .sidebar-more-items a:visited,
     .sidebar-more-items a:active {
         color: #2e2925;
-        font-size: 19px;
+        font-size: 17px;
         text-transform: capitalize;
         text-decoration: none;
         transition: color 0.15s ease-in-out;
-        padding: 20px 0 20px 25px;
+        padding: 20px 10px 20px 25px;
     }
     .sidebar-more-items a:hover {
         color: #555;
@@ -1284,8 +1356,22 @@
     }
 }
 
-@media screen and (min-width: 1300) {
-    .top-menu-small {
-        display: none;
+@media screen and (max-width: 380px) {
+    .header-top {
+        padding: 15px;
+    }
+    .header-top-items:first-child, 
+    .header-logo,
+    .sidebar-logo {
+        width: 130px !important;
+    }
+    .sidebar-header {
+        padding: 5px 15px;
+    }
+    .sidebar-actions-container {
+        padding: 15px 7px 15px 15px;
+    }
+    .sidebar-contents {
+        overflow-y: scroll;
     }
 }

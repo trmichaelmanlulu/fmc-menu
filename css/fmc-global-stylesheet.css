@@ -132,6 +132,7 @@ body {
     background: #fff;
     color: #222;
     line-height: 1.4;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 { font-family: 'abrahamregular', Arial, sans-serif; }
@@ -261,6 +262,8 @@ p, a, span {
 
 /* Set font size */
 .fnt-s-15 { font-size: 15px; }
+.fnt-s-16 { font-size: 16px; }
+.fnt-s-17 { font-size: 17px; }
 .fnt-s-18 { font-size: 18px; }
 
 /* Set font weights */
